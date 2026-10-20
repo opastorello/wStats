@@ -1,0 +1,77 @@
+[package]
+name = "wstats"
+version = "0.3.0"
+description = "System monitor that lives in the Windows taskbar"
+authors = ["Rafael Ferreira"]
+license = "MIT"
+repository = "https://github.com/rbferreira/wStats"
+edition = "2024"
+
+[lib]
+name = "wstats_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+parking_lot = "0.12"
+png = "0.18"
+base64 = "0.22"
+log = { version = "0.4", features = ["std"] }
+windows-numerics = "0.3"
+webview2-com = "0.39"
+windows-core = "0.62"
+
+[dependencies.windows]
+version = "0.62"
+features = [
+  "Win32_Foundation",
+  "Win32_Globalization",
+  "Win32_System_Performance",
+  "Win32_System_SystemInformation",
+  "Win32_System_ProcessStatus",
+  "Win32_System_Power",
+  "Win32_System_Registry",
+  "Win32_System_Services",
+  "Win32_System_LibraryLoader",
+  "Win32_System_Threading",
+  "Win32_System_Memory",
+  "Win32_System_IO",
+  "Win32_Security",
+  "Win32_Devices_DeviceAndDriverInstallation",
+  "Win32_Devices_Display",
+  "Wdk_Graphics_Direct3D",
+  "Wdk_System_SystemInformation",
+  "Win32_System_Com",
+  "Win32_Storage_FileSystem",
+  "Win32_NetworkManagement_IpHelper",
+  "Win32_NetworkManagement_Ndis",
+  "Win32_NetworkManagement_WiFi",
+  "Win32_Networking_WinSock",
+  "Win32_Graphics_Dxgi",
+  "Win32_Graphics_Dxgi_Common",
+  "Win32_Graphics_Direct2D",
+  "Win32_Graphics_Direct2D_Common",
+  "Win32_Graphics_DirectWrite",
+  "Win32_Graphics_Gdi",
+  "Win32_Graphics_Dwm",
+  "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Controls",
+  "Win32_UI_HiDpi",
+  "Win32_UI_Input_KeyboardAndMouse",
+  "Win32_UI_Shell",
+  "Win32_UI_Accessibility",
+]
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

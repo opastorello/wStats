@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "build": {
+    "beforeBuildCommand": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/prepare-installer.ps1"
+  },
+  "bundle": {
+    "resources": {
+      "../tap/out/wStatsTAP.dll": "tap/wStatsTAP.dll",
+      "../tap/out/wStatsCore.dll": "tap/wStatsCore.dll",
+      "../sensors/target/release/wstats-sensors.exe": "wstats-sensors.exe",
+      "installer/PawnIO_setup.exe": "pawnio/PawnIO_setup.exe",
+      "../sensors/pawnio/COPYING": "licenses/PawnIO-modules-LGPL-2.1.txt"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "perMachine",
+        "languages": ["English", "PortugueseBR"],
+        "installerIcon": "icons/icon.ico",
+        "installerHooks": "installer/hooks.nsh"
+      }
+    }
+  }
+}

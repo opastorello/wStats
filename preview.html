@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>wStats preview</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 24px;
+        overflow: auto !important;
+        background: linear-gradient(135deg, #1e3c72, #2a5298 40%, #6b4f8f) fixed !important;
+      }
+      .row {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 24px;
+      }
+      .frame {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.45);
+      }
+      .clean .footer {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="strip"></div>
+    <div id="gallery"></div>
+    <script type="module" src="/src/preview.ts"></script>
+  </body>
+</html>

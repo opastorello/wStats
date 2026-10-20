@@ -1,0 +1,27 @@
+<!-- Source of every icon in this folder: regenerate with `npx tauri icon icons/icon-1024.png`
+     after rendering this file to a 1024x1024 PNG with a transparent background. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16223F"/>
+      <stop offset="1" stop-color="#0B1022"/>
+    </linearGradient>
+    <linearGradient id="arc" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3478F6"/>
+      <stop offset="1" stop-color="#78C04F"/>
+    </linearGradient>
+  </defs>
+  <!-- The tile fills the whole canvas, like the taskbar's other icons; drawn on an
+       896 grid and scaled up 8/7 around the centre. -->
+  <g transform="translate(512 512) scale(1.142857) translate(-512 -512)">
+  <rect x="64" y="64" width="896" height="896" rx="208" fill="url(#bg)"/>
+  <!-- A faint light rim, so the tile's edge shows on a dark taskbar. -->
+  <rect x="74" y="74" width="876" height="876" rx="198" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="20"/>
+  <circle cx="512" cy="512" r="300" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="76"/>
+  <!-- 75% of the ring, from 12 o'clock clockwise -->
+  <path d="M 512 212 A 300 300 0 1 1 212 512" fill="none" stroke="url(#arc)" stroke-width="76" stroke-linecap="round"/>
+  <!-- a stretch of CPU history: up and down, not a staircase -->
+  <polyline points="352,600 420,520 476,566 548,418 612,500 672,452" fill="none" stroke="#fff" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="672" cy="452" r="44" fill="#78C04F"/>
+  </g>
+</svg>

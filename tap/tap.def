@@ -1,0 +1,4 @@
+LIBRARY wStatsTAP
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE

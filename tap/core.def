@@ -1,0 +1,5 @@
+LIBRARY wStatsCore
+EXPORTS
+    WStatsCoreAttach
+    WStatsCoreTreeChange
+    WStatsCoreDetach

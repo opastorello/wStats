@@ -1,0 +1,23 @@
+{
+  "name": "wstats",
+  "private": true,
+  "version": "0.3.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "installer": "tauri build --config src-tauri/tauri.installer.conf.json",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^26.6.5",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.16"
+  }
+}
